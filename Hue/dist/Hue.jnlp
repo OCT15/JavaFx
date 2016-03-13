@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Hue.jnlp">
+  <information>
+    <title>Hue</title>
+    <vendor>ETESP</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Hue.jar" size="338678" download="eager" />
+    <jar href="lib/jfoenix.jar" size="2106424" download="eager" />
+    <jar href="lib/sqljdbc4.jar" size="585020" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Hue" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="hue.Hue"  name="Hue" />
+  <update check="always"/>
+</jnlp>
