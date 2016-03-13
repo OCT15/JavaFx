@@ -1,0 +1,6 @@
+#pane{
+    -fx-background-image: url("FN.png");
+    -fx-background-repeat: stretch;   
+    -fx-background-size: 640 243
+    -fx-background-position: center center;   
+}

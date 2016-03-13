@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="233.0" prefWidth="640.0" style="-fx-background-color: #AE8A59;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTextField fx:id="txtUsuario" focusColor="#d05959" layoutX="15.0" layoutY="102.0" maxWidth="640.0" minWidth="497.0" prefHeight="37.0" prefWidth="625.0" promptText="Usuário">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtSenha" focusColor="#d05959" layoutX="14.0" layoutY="156.0" maxWidth="640.0" minWidth="342.0" prefHeight="37.0" prefWidth="625.0" promptText="Senha">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton fx:id="btnLogin" layoutX="14.0" layoutY="197.0" onAction="#Click" prefHeight="31.0" prefWidth="97.0" text="Login" textFill="#cdd3cb">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSair" layoutX="552.0" layoutY="197.0" onAction="#ClickSair" prefHeight="31.0" prefWidth="74.0" text="Sair" textFill="#cdd3cb">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <Pane />
+   </children>
+</Pane>
