@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="view" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.JRViewerFxController">
+   <top>
+      <Pane prefHeight="125.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="68.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icones/ic_backspace_black_48dp_2x.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="68.0" layoutX="168.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icones/ic_save_black_48dp_2x.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="68.0" layoutX="83.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icones/ic_print_black_48dp_2x.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="277.0" layoutY="77.0" text="Página" />
+            <Label layoutX="500.0" layoutY="67.0" text="Zoom" />
+            <JFXComboBox fx:id="pageList" layoutX="332.0" layoutY="73.0" onAction="#pageListSelected" prefHeight="25.0" prefWidth="89.0" />
+            <JFXSlider fx:id="zoomLevel" layoutX="446.0" layoutY="89.0" />
+            <Label layoutX="185.0" layoutY="-1.0" text="Gerar Relatório">
+               <font>
+                  <Font name="Roboto Light" size="37.0" />
+               </font></Label>
+            <JFXButton onAction="#sair" prefHeight="57.0" prefWidth="75.0" ripplerFill="#9b75d0" />
+            <JFXButton layoutX="83.0" layoutY="51.0" onAction="#print" prefHeight="68.0" prefWidth="68.0" ripplerFill="#9b75d0" />
+            <JFXButton layoutX="168.0" layoutY="51.0" onAction="#save" prefHeight="68.0" prefWidth="68.0" ripplerFill="#9b75d0" />
+
+         </children></Pane>
+   </top>
+   <center>
+      <ScrollPane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: D6C1CD;" BorderPane.alignment="CENTER">
+         <content>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </content>
+      </ScrollPane>
+   </center>
+   <right>
+   </right>
+    <bottom>
+            <Accordion fx:id="resultAccordion" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane fx:id="resultPane" animated="false" text="untitled 1" visible="false">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="resultDescription" layoutX="14.0" layoutY="7.0" text="Label" wrapText="true" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </bottom>
+</BorderPane>

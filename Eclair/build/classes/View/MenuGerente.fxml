@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: D6C1CD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuGerenteController">
+   <children>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="570.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_assignment_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="480.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_watch_later_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="558.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_directions_car_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="148.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_people_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="228.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_kitchen_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgTal" fitHeight="82.0" fitWidth="82.0" layoutX="161.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_local_dining_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="242.0" layoutY="-23.0" text="Eclair Buffet">
+         <font>
+            <Font name="Loki Cola" size="71.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnTal" layoutX="161.0" layoutY="146.0" onAction="#ClickTal" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0" />
+      <JFXButton fx:id="btnCoz" layoutX="228.0" layoutY="261.0" onAction="#ClickCoz" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0" />
+      <JFXButton fx:id="btnConv" layoutX="148.0" layoutY="381.0" onAction="#ClickCov" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0" styleClass="pixels" stylesheets="@btns.css" />
+      <JFXButton fx:id="btnEst" layoutX="558.0" layoutY="146.0" onAction="#ClickEst" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0" />
+      <JFXButton fx:id="btnRel" layoutX="480.0" layoutY="261.0" onAction="#ClickRel" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0" />
+      <JFXButton fx:id="btnRela" layoutX="570.0" layoutY="379.0" onAction="#ClickRela" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0" />
+      <Label fx:id="lblOla" layoutX="14.0" layoutY="10.0" prefHeight="28.0" prefWidth="188.0">
+         <font>
+            <Font name="Roboto Light" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRel" layoutX="659.0" layoutY="563.0" prefHeight="30.0" prefWidth="128.0">
+         <font>
+            <Font name="Roboto Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="356.0" layoutY="484.0" text="Timer">
+         <font>
+            <Font name="Roboto Light" size="34.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="prgTimer" layoutX="224.0" layoutY="538.0" prefHeight="18.0" prefWidth="353.0" progress="0.0" />
+   </children>
+</Pane>
