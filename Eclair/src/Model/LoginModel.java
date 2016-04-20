@@ -11,11 +11,12 @@ package Model;
  */
 import Controller.LoginController;
 import java.io.IOException;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-      
+
 public class LoginModel {
 
     public static boolean isOk() {
@@ -26,33 +27,44 @@ public class LoginModel {
         LoginModel.ok = ok;
     }
 
+    private Persist p = new Persist();
+
     private static boolean ok;
 
-    public void connect(String usuario, String senha) throws SQLException, IOException {        
-        LoginController lc = new LoginController();       
+    public void connect(String usuario, String senha) throws SQLException, IOException {
+        LoginController lc = new LoginController();
         Acessa c = new Acessa();
-        //c.conectar();
-        c.executarSQL("select * from funcionario where nome='" + usuario + "' and senha='" + senha + "'");
+        c.executarSQL("select * from Funcionario where nome='" + usuario + "' and senha='" + senha + "'");
+        ResultSetMetaData metaData = c.rs.getMetaData();
         try {
-            if (c.rs.next()) {
-                int cont = c.rs.getRow();
-                if (cont != 0) {
-                    ok = true;
-                    
+            while (c.rs.next()) {
+                if (metaData.getColumnCount() != 0) {
+                    switch (c.rs.getString("id_permissao")) {
+                        case "1":
+                            ok = true;
+                            p.setNome(c.rs.getString("nome"));
+                            break;
+                        case "2":
+                            ok = false;
+                            p.setNome(c.rs.getString("nome"));
+                            break;
+                        case "3":
+                            ok = false;
+                            p.setNome(c.rs.getString("nome"));
+                            break;
+                    }
+
+                } else {
+                    ok = false;
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
-                ok = false;
-                
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             ok = false;
-            
+
         }
         c.desconectar();
         LoginModel.setOk(ok);
     }
 }
-

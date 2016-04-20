@@ -3,6 +3,7 @@
  */
 package Controller;
 
+import Model.JRViewerFxMode;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXSlider;
 import java.awt.image.BufferedImage;
@@ -158,11 +159,11 @@ public class JRViewerFxController implements  Initializable {
 	public boolean save() {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Save File");
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("PDF Document",Arrays.asList("*.pdf", "*.PDF")));
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("PNG image",Arrays.asList("*.png", "*.PNG")));
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("DOCX Document",Arrays.asList("*.docx", "*.DOCX")));
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("XLSX Document",Arrays.asList("*.xlsx", "*.XLSX")));	
-		fileChooser.getExtensionFilters().add(new ExtensionFilter("HTML Document",Arrays.asList("*.html", "*.HTML")));
+		fileChooser.getExtensionFilters().add(new ExtensionFilter("Documento PDF",Arrays.asList("*.pdf", "*.PDF")));
+		fileChooser.getExtensionFilters().add(new ExtensionFilter("Imagem PNG",Arrays.asList("*.png", "*.PNG")));
+		fileChooser.getExtensionFilters().add(new ExtensionFilter("Documento Word DOCX",Arrays.asList("*.docx", "*.DOCX")));
+		fileChooser.getExtensionFilters().add(new ExtensionFilter("Documento Excel XLSX",Arrays.asList("*.xlsx", "*.XLSX")));	
+		fileChooser.getExtensionFilters().add(new ExtensionFilter("Documento Web HTML",Arrays.asList("*.html", "*.HTML")));
 		File file=	fileChooser.showSaveDialog(parentStage);
 		if( fileChooser.getSelectedExtensionFilter() !=null && fileChooser.getSelectedExtensionFilter().getExtensions()!=null){
 			List<String> selectedExtension = fileChooser.getSelectedExtensionFilter().getExtensions();

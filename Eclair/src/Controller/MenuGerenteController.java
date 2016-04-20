@@ -5,13 +5,20 @@
  */
 package Controller;
 
+import Model.JRViewerFxMode;
+import Model.MenuGerenteModel;
+import Model.Persist;
+import View.JRViewerFx;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 //import java.time.Duration;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,7 +31,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -59,8 +65,14 @@ public class MenuGerenteController implements Initializable {
     private JFXButton btnRel;
     @FXML
     private JFXButton btnRela;
+
+    private MenuGerenteModel mgm = new MenuGerenteModel();
     @FXML
-    private ProgressBar prgTimer;
+    private Label lblIdEvento;
+
+    private Persist p = new Persist();
+
+    private boolean txt = true;
 
     private void bindToTime() {
         Timeline timeline = new Timeline(
@@ -74,6 +86,36 @@ public class MenuGerenteController implements Initializable {
                                 String secondString = StringUtilities.pad(2, '0', time.get(Calendar.SECOND) + "");
                                 String ampmString = time.get(Calendar.AM_PM) == Calendar.AM ? "AM" : "PM";
                                 lblRel.setText(hourString + ":" + minuteString + ":" + secondString + " " + ampmString);
+                                if (txt) {
+                                    try {
+                                        mgm.selecionarEvento();
+                                    } catch (SQLException ex) {
+                                        Logger.getLogger(MenuGerenteController.class.getName()).log(Level.SEVERE, null, ex);
+                                    }
+                                    if (p.getId_evento() == null) {
+                                        try {
+                                            FXMLLoader fxmlLoader;
+                                            fxmlLoader = new FXMLLoader(getClass().getResource("/View/SelecaoEvento.fxml"));
+                                            Parent root1 = (Parent) fxmlLoader.load();
+                                            Stage stage = new Stage();
+                                            stage.initModality(Modality.APPLICATION_MODAL);
+                                            stage.initStyle(StageStyle.UNDECORATED);
+                                            stage.setTitle("Selecão de Evento");
+                                            stage.setResizable(false);
+                                            stage.setScene(new Scene(root1));
+                                            stage.show();
+                                            //-----
+                                            Stage stage2 = (Stage) btnEst.getScene().getWindow();
+                                            // do what you have to do
+                                            stage2.close();
+                                        } catch (IOException ex) {
+                                            Logger.getLogger(MenuGerenteController.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                    }
+                                    lblIdEvento.setText("Código do evento: " + p.getId_evento());
+                                    lblOla.setText("Olá " + p.getNome());
+                                    txt = false;
+                                }
                             }
                         }
                 ),
@@ -86,6 +128,7 @@ public class MenuGerenteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         bindToTime();
+        
 
     }
 
@@ -95,7 +138,7 @@ public class MenuGerenteController implements Initializable {
 
     @FXML
     private void ClickTal(ActionEvent event) throws IOException {
-         
+
     }
 
     @FXML
@@ -103,7 +146,21 @@ public class MenuGerenteController implements Initializable {
     }
 
     @FXML
-    private void ClickCov(ActionEvent event) {
+    private void ClickCov(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader;
+        fxmlLoader = new FXMLLoader(getClass().getResource("/View/Convidados.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.setTitle("Controle de Convidados");
+        stage.setResizable(false);
+        stage.setScene(new Scene(root1));
+        stage.show();
+        //-----
+        Stage stage2 = (Stage) btnEst.getScene().getWindow();
+        // do what you have to do
+        stage2.close();
     }
 
     @FXML
@@ -115,7 +172,6 @@ public class MenuGerenteController implements Initializable {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Controle de Estacionamento");
-
         stage.setResizable(false);
         stage.setScene(new Scene(root1));
         stage.show();
@@ -127,32 +183,31 @@ public class MenuGerenteController implements Initializable {
 
     @FXML
     private void ClickRel(ActionEvent event) {
+        
     }
 
     @FXML
     private void ClickRela(ActionEvent event) throws IOException, Exception {
-        
+
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Gerar Relatório");
-
         stage.setResizable(false);
-        
+
         JasperPrint jasperprint = null;
         try {
             jasperprint = JasperFillManager.fillReport("target/classes/report1.jasper", new HashMap(), new JREmptyDataSource());
         } catch (JRException e) {
-           
+
             e.printStackTrace();
         }
         JRViewerFx jv = new JRViewerFx(jasperprint, JRViewerFxMode.REPORT_VIEW, stage);
         jv.start(stage);
-        
-        Stage stage2 = (Stage) btnRela.getScene().getWindow();
-       
-        stage2.close();
 
+        Stage stage2 = (Stage) btnRela.getScene().getWindow();
+
+        stage2.close();
     }
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.shape.*?>
@@ -9,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EstacionamentoAController">
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EstacionamentoDController">
    <children>
        
            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
@@ -117,14 +118,25 @@
             <Image url="@../icones/ic_backspace_black_48dp_2x.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnVoltar" layoutX="2.0" onAction="#Sair" prefHeight="62.0" prefWidth="84.0" ripplerFill="#9b75d0" />
+      <JFXButton fx:id="btnVoltar" layoutX="2.0" onAction="#Sair" prefHeight="62.0" prefWidth="84.0" ripplerFill="#9b75d0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
       <JFXTextField fx:id="txtSearch" focusColor="#9b75d0" layoutX="11.0" layoutY="544.0" maxWidth="194.0" minWidth="194.0" prefHeight="31.0" prefWidth="194.0" text="Pesquisar Vaga" />
       <ImageView fitHeight="84.0" fitWidth="84.0" layoutX="217.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icones/ic_search_black_48dp_2x.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnSearch" layoutX="217.0" layoutY="515.0" onAction="#ClickPesquisar" prefHeight="84.0" prefWidth="84.0" ripplerFill="#9b75d0" />
+      <JFXButton fx:id="btnSearch" layoutX="217.0" layoutY="515.0" onAction="#ClickPesquisar" prefHeight="84.0" prefWidth="84.0" ripplerFill="#9b75d0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label fx:id="lblRel" layoutX="670.0" layoutY="567.0" prefHeight="25.0" prefWidth="124.0">
+         <font>
+            <Font name="Roboto Light" size="18.0" />
+         </font>
+      </Label>
    </children>
     
 </Pane>

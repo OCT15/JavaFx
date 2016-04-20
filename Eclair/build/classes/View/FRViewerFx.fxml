@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
@@ -34,9 +35,18 @@
                <font>
                   <Font name="Roboto Light" size="37.0" />
                </font></Label>
-            <JFXButton onAction="#sair" prefHeight="57.0" prefWidth="75.0" ripplerFill="#9b75d0" />
-            <JFXButton layoutX="83.0" layoutY="51.0" onAction="#print" prefHeight="68.0" prefWidth="68.0" ripplerFill="#9b75d0" />
-            <JFXButton layoutX="168.0" layoutY="51.0" onAction="#save" prefHeight="68.0" prefWidth="68.0" ripplerFill="#9b75d0" />
+            <JFXButton onAction="#sair" prefHeight="57.0" prefWidth="75.0" ripplerFill="#9b75d0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutX="83.0" layoutY="51.0" onAction="#print" prefHeight="68.0" prefWidth="68.0" ripplerFill="#9b75d0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
+            <JFXButton layoutX="168.0" layoutY="51.0" onAction="#save" prefHeight="68.0" prefWidth="68.0" ripplerFill="#9b75d0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></JFXButton>
 
          </children></Pane>
    </top>

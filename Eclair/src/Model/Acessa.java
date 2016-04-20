@@ -20,9 +20,9 @@ import javax.swing.JOptionPane;
 public class Acessa {
 
     private static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private static String caminho = "jdbc:sqlserver://localhost\\MSSQLSERVER:1433; DataBaseName=teste";
-    private static String usuario = "aluno";
-    private static String senha = "etesp";    
+    private static String caminho = "jdbc:sqlserver://localhost\\MSSQLSERVER:1433; DataBaseName=eclair";
+    private static String usuario = "sa";
+    private static String senha = "123";    
     public Statement st;
     public ResultSet rs;
     private Connection conn;
@@ -65,8 +65,8 @@ public class Acessa {
             st = conn.createStatement();
             rs = st.executeQuery(sql);
         } catch (SQLException err) {
-            System.out.println(err);
-        }
+            System.out.println(err);           
+        }       
     }
     public void insert_updateSQL(String sql)
     {
@@ -76,6 +76,8 @@ public class Acessa {
             st.executeUpdate(sql);
         } catch (SQLException ex) {
             Logger.getLogger(Acessa.class.getName()).log(Level.SEVERE, null, ex);
+           
         }        
+        
     }
 }

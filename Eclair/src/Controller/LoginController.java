@@ -9,6 +9,7 @@ import Model.LoginModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -24,6 +25,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -48,7 +50,7 @@ public class LoginController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
     }
 
     
@@ -57,9 +59,8 @@ public class LoginController implements Initializable {
         usuario = txtUsuario.getText();
         senha = txtSenha.getText();
         LoginModel lm = new LoginModel();
-        lm.connect(usuario, senha);
-        
-        if(lm.isOk()==true)
+        lm.connect(usuario, senha);        
+        if(lm.isOk())
         {
         
         FXMLLoader fxmlLoader;
@@ -77,6 +78,21 @@ public class LoginController implements Initializable {
                 Stage stage2 = (Stage) btnLogin.getScene().getWindow();
                 // do what you have to do
                 stage2.close();
+                File a = new File("data.bin");
+                File b = new File("dataB.bin");
+                File c = new File("dataC.bin");
+                File d = new File("dataD.bin");               
+                if(a.exists())                
+                    a.delete();               
+                if(b.exists())
+                    b.delete();
+                if(c.exists())
+                    c.delete();
+                if(d.exists())
+                    d.delete();
+        }else
+        {
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
         }
         
     }
