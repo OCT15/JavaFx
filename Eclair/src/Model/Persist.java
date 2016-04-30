@@ -5,6 +5,12 @@
  */
 package Model;
 
+import com.jfoenix.controls.JFXCheckBox;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author danie
@@ -29,5 +35,35 @@ public class Persist {
     }
     
     private static String id_evento;
+
+    public static int getTam() {
+        return tam;
+    }
+
+    public static void setTam(int tam) {
+        Persist.tam = tam;
+    }
+    private static int tam;
     
+     private static ObservableList<Convidado> data = FXCollections.observableArrayList();
+
+    public static ObservableList<Convidado> getData() {
+        return data;
+    }
+
+    public static void setData(ObservableList<Convidado> data) {
+        Persist.data = data;
+    }
+
+    
+    private static List<JFXCheckBox> list = new ArrayList<>();
+
+    public static List<JFXCheckBox> getList() {
+        return list;
+    }
+
+    public static void setList(List<JFXCheckBox> list) {
+        Persist.list = list;
+    }
+
 }

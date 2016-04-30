@@ -10,6 +10,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,6 +33,7 @@ public class Placa implements Serializable {
 
     public void lerVagas() {
         try {
+            
             ObjectInputStream is = new ObjectInputStream(new FileInputStream("data.bin"));
             Placa pa = (Placa) is.readObject();           
             for (int x = 0; x < 24; x++) {                

@@ -10,6 +10,11 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: D6C1CD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuGerenteController">
    <children>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="26.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_power_settings_new_black_48dp_2x.png" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="570.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../icones/ic_assignment_black_48dp_2x.png" />
@@ -90,5 +95,10 @@
             <Font name="Roboto Light" size="20.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btnLogoff" layoutX="26.0" layoutY="491.0" onAction="#LogOff" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </Pane>

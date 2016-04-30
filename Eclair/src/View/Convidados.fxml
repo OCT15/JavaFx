@@ -23,7 +23,7 @@
                               <TableColumn fx:id="colPres" prefWidth="75.0" text="Presente" />
                           </columns>
                         </TableView>
-                        <JFXTextField focusColor="#9b75d0" layoutX="183.0" layoutY="57.0" maxWidth="298.0" minWidth="198.0" prefHeight="46.0" prefWidth="279.0" style="-fx-background-color: D6C1CD;">
+                        <JFXTextField fx:id="txtPesquisar" focusColor="#9b75d0" layoutX="183.0" layoutY="57.0" maxWidth="298.0" minWidth="198.0" prefHeight="46.0" prefWidth="279.0" style="-fx-background-color: D6C1CD;">
                            <font>
                               <Font name="Roboto Light" size="19.0" />
                            </font>
@@ -33,10 +33,6 @@
                               <Image url="@../icones/ic_search_black_48dp_2x.png" />
                            </image>
                         </ImageView>
-                        <JFXButton fx:id="btnPesq" layoutX="423.0" layoutY="66.0" onAction="#Pesquisar" prefHeight="29.0" prefWidth="29.0" ripplerFill="#9b75d0">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></JFXButton>
                         <Label layoutX="8.0" layoutY="67.0" text="Pesquisar Convidado">
                            <font>
                               <Font name="Roboto Light" size="18.0" />
@@ -55,7 +51,7 @@
                               <Image url="@../icones/ic_person_add_black_48dp_2x.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField focusColor="#9b75d0" layoutX="213.0" layoutY="137.0" minWidth="198.0" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: D6C1CD;">
+                        <JFXTextField fx:id="txtNome" focusColor="#9b75d0" layoutX="213.0" layoutY="137.0" minWidth="198.0" prefHeight="31.0" prefWidth="242.0" style="-fx-background-color: D6C1CD;">
                            <font>
                               <Font name="Roboto Light" size="19.0" />
                            </font>
@@ -65,7 +61,7 @@
                               <Font name="Roboto Light" size="20.0" />
                            </font>
                         </Label>
-                        <JFXButton layoutX="360.0" layoutY="199.0" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0">
+                        <JFXButton layoutX="360.0" layoutY="199.0" onAction="#AddConvidado" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></JFXButton>

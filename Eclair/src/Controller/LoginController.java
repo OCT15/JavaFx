@@ -20,6 +20,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
@@ -92,7 +94,11 @@ public class LoginController implements Initializable {
                     d.delete();
         }else
         {
-            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos");
+            Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Erro");
+                alert.setHeaderText(null);
+                alert.setContentText("Usuário ou senha incorretos");
+                alert.showAndWait();
         }
         
     }

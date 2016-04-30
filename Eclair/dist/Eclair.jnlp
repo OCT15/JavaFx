@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Eclair.jar" size="993096" download="eager" />
+    <jar href="Eclair.jar" size="1012018" download="eager" />
     <jar href="lib/ant-1.7.1.jar" size="1323005" download="eager" />
     <jar href="lib/antlr-2.7.6.jar" size="443432" download="eager" />
     <jar href="lib/commons-beanutils-1.8.2.jar" size="231891" download="eager" />

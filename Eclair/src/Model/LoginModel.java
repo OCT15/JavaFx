@@ -34,31 +34,26 @@ public class LoginModel {
     public void connect(String usuario, String senha) throws SQLException, IOException {
         LoginController lc = new LoginController();
         Acessa c = new Acessa();
-        c.executarSQL("select * from Funcionario where nome='" + usuario + "' and senha='" + senha + "'");
-        ResultSetMetaData metaData = c.rs.getMetaData();
+        c.executarSQL("select * from funcionario where nome='" + usuario + "' and senha='" + senha + "'");       
         try {
-            while (c.rs.next()) {
-                if (metaData.getColumnCount() != 0) {
-                    switch (c.rs.getString("id_permissao")) {
-                        case "1":
-                            ok = true;
-                            p.setNome(c.rs.getString("nome"));
-                            break;
-                        case "2":
-                            ok = false;
-                            p.setNome(c.rs.getString("nome"));
-                            break;
-                        case "3":
-                            ok = false;
-                            p.setNome(c.rs.getString("nome"));
-                            break;
-                    }
+            if (c.rs.next()) {
+                switch (c.rs.getString("id_permissao")) {
+                    case "1":
+                        ok = true;
+                        p.setNome(c.rs.getString("nome"));
+                        break;
+                    case "2":
+                        ok = false;
+                        p.setNome(c.rs.getString("nome"));
+                        break;
+                    case "3":
+                        ok = false;
+                        p.setNome(c.rs.getString("nome"));
+                        break;
 
-                } else {
-                    ok = false;
-                }
-            }
-
+                }               
+            }else
+            ok = false;
         } catch (SQLException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
             ok = false;

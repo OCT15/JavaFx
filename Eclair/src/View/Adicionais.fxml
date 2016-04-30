@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: D6C1CD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdicionaisController">
+   <children>
+      <TableView fx:id="tblMob" editable="true" layoutX="163.0" layoutY="132.0" prefHeight="336.0" prefWidth="474.0">
+        <columns>
+          <TableColumn fx:id="colMob" prefWidth="126.0" text="Mobilha danificada" />
+          <TableColumn fx:id="colPrec" prefWidth="94.0" text="Preço unitário" />
+            <TableColumn fx:id="colQuant" prefWidth="88.0" text="Quantidade" />
+        </columns>
+      </TableView>
+      <Label layoutX="215.0" layoutY="30.0" text="Controle de Mobilha">
+         <font>
+            <Font name="Roboto Light" size="42.0" />
+         </font>
+      </Label>
+      <Label layoutX="163.0" layoutY="498.0" text="Preço Total:">
+         <font>
+            <Font name="Roboto Light" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="264.0" layoutY="498.0" prefHeight="25.0" prefWidth="253.0">
+         <font>
+            <Font name="Roboto Light" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="544.0" layoutY="482.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/addMob.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="544.0" layoutY="482.0" onAction="#btnAdd" prefHeight="82.0" prefWidth="82.0" ripplerFill="#9b75d0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="60.0" fitWidth="73.0" layoutX="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icones/ic_backspace_black_48dp_2x.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnVoltar" layoutX="-7.0" layoutY="-1.0" onAction="#Sair" prefHeight="62.0" prefWidth="84.0" ripplerFill="#9b75d0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</Pane>

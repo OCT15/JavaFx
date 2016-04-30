@@ -19,14 +19,9 @@ public class MenuGerenteModel {
     Acessa c = new Acessa();
     Persist p = new Persist();
 
-    public void selecionarEvento() throws SQLException {
-
-        String pattern = "dd-MM-yyyy";
-        String dateInString = new SimpleDateFormat(pattern).format(new Date());
-        DateTime dt = new DateTime();
-        int hour = dt.getHourOfDay() + 1;
+    public void selecionarEvento() throws SQLException {        
         String sql = "SET DATEFORMAT dmy "
-                + "select id_evento from evento where dt_evento='" + dateInString + "' and hr_inicio='" + String.valueOf(hour)+":00:00" + "'";
+                + "select id_evento from evento where dt_evento=CAST(GETDATE() AS DATE) AND DATEPART(HOUR,hr_inicio)=DATEPART(HOUR, GETDATE())+1";
         c.executarSQL(sql);
         if (c.rs.next()) {
             p.setId_evento(c.rs.getString("id_evento"));

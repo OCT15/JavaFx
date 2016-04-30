@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,6 +36,7 @@ public class PlacaC implements Serializable {
 
     public void lerVagas() {
         try {
+           
             ObjectInputStream is = new ObjectInputStream(new FileInputStream("dataC.bin"));
             PlacaC pa = (PlacaC) is.readObject();
            

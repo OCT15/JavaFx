@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -242,6 +243,7 @@ public class EstacionamentoBController implements Initializable {
 
     public void salvarVagas() {
         try {
+            
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("dataB.bin"));
             os.writeObject(p);//write object
             os.close();
